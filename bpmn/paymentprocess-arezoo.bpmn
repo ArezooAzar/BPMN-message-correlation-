@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:zeebe="http://camunda.org/schema/zeebe/1.0" xmlns:modeler="http://camunda.org/schema/modeler/1.0" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" id="Definitions_1" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="5.0.0" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="1.3.0" camunda:diagramRelationId="09105d4a-faa5-4771-9c15-0e22bff768a1">
+  <bpmn:process id="arezoo-payment-process" isExecutable="true">
+    <bpmn:startEvent id="MoneyCollected" name="Payment message">
+      <bpmn:outgoing>Flow_1sut79b</bpmn:outgoing>
+      <bpmn:messageEventDefinition id="MessageEventDefinition_0ddyr94" messageRef="Message_0nvm9d8" />
+    </bpmn:startEvent>
+    <bpmn:sequenceFlow id="Flow_1sut79b" sourceRef="MoneyCollected" targetRef="deductMoney" />
+    <bpmn:sequenceFlow id="Flow_18r2kkf" sourceRef="deductMoney" targetRef="informOrderProcess" />
+    <bpmn:intermediateThrowEvent id="informOrderProcess" name="Inform Order process">
+      <bpmn:extensionElements>
+        <zeebe:taskDefinition type="PaymentDone" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_18r2kkf</bpmn:incoming>
+      <bpmn:messageEventDefinition id="MessageEventDefinition_1jm3bha" />
+    </bpmn:intermediateThrowEvent>
+    <bpmn:userTask id="deductMoney" name="Deduct money from customer account">
+      <bpmn:incoming>Flow_1sut79b</bpmn:incoming>
+      <bpmn:outgoing>Flow_18r2kkf</bpmn:outgoing>
+    </bpmn:userTask>
+  </bpmn:process>
+  <bpmn:message id="Message_0nvm9d8" name="Money-Collected" />
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="arezoo-payment-process">
+      <bpmndi:BPMNEdge id="Flow_18r2kkf_di" bpmnElement="Flow_18r2kkf">
+        <di:waypoint x="340" y="118" />
+        <di:waypoint x="402" y="118" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1sut79b_di" bpmnElement="Flow_1sut79b">
+        <di:waypoint x="186" y="118" />
+        <di:waypoint x="240" y="118" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Event_1y6cvzd_di" bpmnElement="MoneyCollected">
+        <dc:Bounds x="150" y="100" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="146" y="143" width="45" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_15p8lhc_di" bpmnElement="informOrderProcess">
+        <dc:Bounds x="402" y="100" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="389" y="143" width="63" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_12b127j_di" bpmnElement="deductMoney">
+        <dc:Bounds x="240" y="78" width="100" height="80" />
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
