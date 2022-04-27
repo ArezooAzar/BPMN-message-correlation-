@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:zeebe="http://camunda.org/schema/zeebe/1.0" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:modeler="http://camunda.org/schema/modeler/1.0" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" id="Definitions_1" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="5.0.0" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="1.3.0" camunda:diagramRelationId="95f8ecf7-03fa-4874-a487-1c196f31954c">
-  <bpmn:process id="Order-Process" isExecutable="true">
+  <bpmn:process id="arezo-order-process-" isExecutable="true">
     <bpmn:sequenceFlow id="Flow_0w2qqfr" sourceRef="StartEvent_1" targetRef="Activity_0tfyqob" />
     <bpmn:serviceTask id="Activity_0tfyqob" name="Prepare  order">
       <bpmn:extensionElements>
@@ -48,7 +48,7 @@
     </bpmn:extensionElements>
   </bpmn:message>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
-    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Order-Process">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="arezo-order-process-">
       <bpmndi:BPMNEdge id="Flow_1g8zbvy_di" bpmnElement="Flow_1g8zbvy">
         <di:waypoint x="850" y="100" />
         <di:waypoint x="942" y="100" />

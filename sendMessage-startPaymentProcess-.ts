@@ -9,7 +9,6 @@ const zbc = new ZBClient();
     taskHandler: (job, _, w) => {
       const {orderId}=job.variables;
       zbc.publishStartMessage({
-  
         name: "Money-Collected",
         variables: {
          

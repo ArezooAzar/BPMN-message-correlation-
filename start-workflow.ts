@@ -8,7 +8,7 @@ async function main() {
 
   for (let i = 0; i < 3; i++) {
   console.log(
-    await zbc.createProcessInstance("Order-Process", {
+    await zbc.createProcessInstance("arezo-order-process-", {
       // orderId: Math.random()*1000,
       orderId: Math.floor(Math.random() * 1000) + 1,
       customerId: 123,

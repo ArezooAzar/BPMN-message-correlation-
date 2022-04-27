@@ -14,13 +14,10 @@
       <bpmn:incoming>Flow_18r2kkf</bpmn:incoming>
       <bpmn:messageEventDefinition id="MessageEventDefinition_1jm3bha" />
     </bpmn:intermediateThrowEvent>
-    <bpmn:serviceTask id="deductMoney" name="Deduct money from customer account">
-      <bpmn:extensionElements>
-        <zeebe:taskDefinition type="deduct-money" />
-      </bpmn:extensionElements>
+    <bpmn:userTask id="deductMoney" name="Deduct money from customer account">
       <bpmn:incoming>Flow_1sut79b</bpmn:incoming>
       <bpmn:outgoing>Flow_18r2kkf</bpmn:outgoing>
-    </bpmn:serviceTask>
+    </bpmn:userTask>
   </bpmn:process>
   <bpmn:message id="Message_0nvm9d8" name="Money-Collected" />
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
@@ -45,7 +42,7 @@
           <dc:Bounds x="389" y="143" width="63" height="27" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Activity_119ns72_di" bpmnElement="deductMoney">
+      <bpmndi:BPMNShape id="Activity_12b127j_di" bpmnElement="deductMoney">
         <dc:Bounds x="240" y="78" width="100" height="80" />
       </bpmndi:BPMNShape>
     </bpmndi:BPMNPlane>
