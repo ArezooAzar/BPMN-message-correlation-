@@ -2,14 +2,11 @@
 
 Message correlation is a powerful feature in Zeebe. It allows you to target a running workflow with a state update from an external system asynchronously. 
 
-This tutorial we model a order process and paymnet process 
+In this example we model 2 process, the `order process` and the `paymnet process` 
 
-order process will user message intermediate throw event element to active second process which is payment process and at the end of the payment process will notifiy order process via sending the message . 
+order process will user `message intermediate throw event` element to active second process which is payment process and at the end of the payment process will notifiy order process via sending the message . 
 
-This tutorial uses the typescript client, but it serves to illustrate message correlation concepts that are applicable to all language clients.
-
-
-
+This example uses the typescript client.
 
 If you are doing this exercise on Camunda Cloud, remember to set the environment variables with your client credentials in each terminal window; and you will use Operate in your Camunda Cloud cluster.
 
@@ -76,7 +73,7 @@ This starts a workflow instance with the `orderId` set to random number:
  ![](img/workflow-state.png)
 
 
-You can see that this workflow instance has the variable `orderId` set to the random value value .
+You can see that this workflow instance has the variable `orderId` set to the random value .
 
 - Now start the workers:
 ```
@@ -133,5 +130,4 @@ back to order process, you will see the message catch event,and the message has 
 now open the tasklist complet the job and then you will see that order process also run to completion.
 
 
-![](img/
-![](img/shipping-worker.png)
+![](img/process-complete.png)
