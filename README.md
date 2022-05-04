@@ -86,7 +86,7 @@ ts-node prepair-order-worker.ts
 
 - Now start the worker for throw message:
 ```
-ts-node sendMessage-startPaymentProcess-.ts  
+ts-node sendMessage-startPaymentProcess.ts  
 
 ```
 back to operate and you should be able to see the Payment process start 
@@ -100,7 +100,7 @@ Now all the start message with the name collect-Money will start
 
 - Now start the worker for deduct money:
 ```
-ts-node ts-node deduct-money.ts    
+ts-node  deduct-money.ts    
 
 ```
  ![](img/deduct-money.png)
