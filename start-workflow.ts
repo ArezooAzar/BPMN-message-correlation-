@@ -10,6 +10,7 @@ async function main() {
   console.log(
     await zbc.createProcessInstance("arezo-order-process-", {
       // orderId: Math.random()*1000,
+      // Returns a random integer from 1 to 1000:
       orderId: Math.floor(Math.random() * 1000) + 1,
       customerId: 123,
       paymentStatus: "unpaid",
